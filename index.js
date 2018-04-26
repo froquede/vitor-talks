@@ -1,5 +1,5 @@
 $(function () {
-  var timer = 1000;
+  var timer = 500;
   var currentSelection = 0;
   var currentChar = 0;
   var chars = [5,9,9,9];
@@ -14,6 +14,16 @@ $(function () {
     var line = $('.second ul:nth-child('+currentSelection+') li:nth-child('+r+')').addClass('active');
   };
   
+  var updateViewChar = function(char){
+    $('.js-display-char').text(char);
+  };
+
+  var highlightSelection = function(){
+    $('.js-display-char').addClass('highlight');
+    setTimeout(function(){
+      $('.js-display-char').removeClass('highlight');
+    }, timer / 2);
+  }
   
   var state = {
     timer: null,
@@ -21,6 +31,7 @@ $(function () {
       this.timer = setInterval(function() {
         if(currentSelection > 3) currentSelection = 0;
         console.log('current row: ', currentSelection);
+        updateViewChar(currentSelection);
         updateRow(currentSelection++);
       }, timer);
     },
@@ -32,6 +43,7 @@ $(function () {
         console.log('current row: ', currentSelection);
         console.log('current col: ', currentChar);
         console.log('current char: ', $('.second ul:nth-child('+currentSelection+') li:nth-child('+currentChar+') input').val());
+        updateViewChar($('.second ul:nth-child('+currentSelection+') li:nth-child('+currentChar+') input').val());
         updateChar(currentChar++);
       }, timer);
     },
@@ -61,6 +73,7 @@ $(function () {
   document.addEventListener('keydown', function(event) {
     if(event.key == 'ArrowRight') {
       state.next();
+      highlightSelection();
     }
   });
 });

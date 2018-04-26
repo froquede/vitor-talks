@@ -48,6 +48,7 @@ input[type=button].selected {
   justify-content: center;
   align-items: center;
   font-size: 140px;
+  transition: 0.2s ease all;
 }
 .left .characters {
   display: flex;
@@ -241,3 +242,7 @@ textarea:focus {
   margin-top: 7px;
 }
 
+.left .display.highlight{
+  background-color: green;
+  transition: 0.2s ease all;
+}
