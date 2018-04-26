@@ -1,57 +1,130 @@
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="index.js"></script>
-<link href="main.css"></script>
+<link rel="stylesheet" type="text/css" href="main.css"></link>
 <div class="left">
   <div class="display">A</div>
   <div class="characters">
-  <ul id="row">
-    <li class="active"><input type="button" value="Ø" id="0" /></li>
-    <li class="active"><input type="button" value="1" id="1" /></li>
-    <li class="active"><input type="button" value="2" id="2" /></li>
-    <li class="active"><input type="button" value="3" id="3" /></li>
-  </ul>
+    <ul id="row">
+      <li class="active">
+        <input type="button" value="Ø" id="0" />
+      </li>
+      <li class="active">
+        <input type="button" value="1" id="1" />
+      </li>
+      <li class="active">
+        <input type="button" value="2" id="2" />
+      </li>
+      <li class="active">
+        <input type="button" value="3" id="3" />
+      </li>
+    </ul>
     <div class="second">
       <ul id="vowel">
-        <li><input type="button" value="A" id="a" /></li>
-        <li><input type="button" value="E" id="e" /></li>
-        <li><input type="button" value="I" id="i" /></li>
-        <li><input type="button" value="O" id="o" /></li>
-        <li><input type="button" value="U" id="u" /></li>
+        <li>
+          <input type="button" value="A" id="a" />
+        </li>
+        <li>
+          <input type="button" value="E" id="e" />
+        </li>
+        <li>
+          <input type="button" value="I" id="i" />
+        </li>
+        <li>
+          <input type="button" value="O" id="o" />
+        </li>
+        <li>
+          <input type="button" value="U" id="u" />
+        </li>
       </ul>
       <ul id="line-one">
-        <li><input type="button" value="B" id="V" /></li>
-        <li><input type="button" value="C" id="1" /></li>
-        <li><input type="button" value="D" id="2" /></li>
-        <li><input type="button" value="F" id="3" /></li>
-        <li><input type="button" value="G" id="3" /></li>
-        <li><input type="button" value="H" id="1" /></li>
-        <li><input type="button" value="J" id="2" /></li>
-        <li><input type="button" value="K" id="3" /></li>
-        <li><input type="button" value="!" id="3" /></li>
+        <li>
+          <input type="button" value="B" id="V" />
+        </li>
+        <li>
+          <input type="button" value="C" id="1" />
+        </li>
+        <li>
+          <input type="button" value="D" id="2" />
+        </li>
+        <li>
+          <input type="button" value="F" id="3" />
+        </li>
+        <li>
+          <input type="button" value="G" id="3" />
+        </li>
+        <li>
+          <input type="button" value="H" id="1" />
+        </li>
+        <li>
+          <input type="button" value="J" id="2" />
+        </li>
+        <li>
+          <input type="button" value="K" id="3" />
+        </li>
+        <li>
+          <input type="button" value="!" id="3" />
+        </li>
       </ul>
       <ul id="line-two">
-        <li><input type="button" value="L" id="V" /></li>
-        <li><input type="button" value="M" id="1" /></li>
-        <li><input type="button" value="N" id="2" /></li>
-        <li><input type="button" value="P" id="3" /></li>
-        <li><input type="button" value="Q" id="3" /></li>
-        <li><input type="button" value="R" id="1" /></li>
-        <li><input type="button" value="S" id="2" /></li>
-        <li><input type="button" value="-" id="3" /></li>
-        <li><input type="button" value="?" id="3" /></li>
+        <li>
+          <input type="button" value="L" id="V" />
+        </li>
+        <li>
+          <input type="button" value="M" id="1" />
+        </li>
+        <li>
+          <input type="button" value="N" id="2" />
+        </li>
+        <li>
+          <input type="button" value="P" id="3" />
+        </li>
+        <li>
+          <input type="button" value="Q" id="3" />
+        </li>
+        <li>
+          <input type="button" value="R" id="1" />
+        </li>
+        <li>
+          <input type="button" value="S" id="2" />
+        </li>
+        <li>
+          <input type="button" value="-" id="3" />
+        </li>
+        <li>
+          <input type="button" value="?" id="3" />
+        </li>
       </ul>
       <ul id="line-three">
-        <li><input type="button" value="T" id="V" /></li>
-        <li><input type="button" value="V" id="1" /></li>
-        <li><input type="button" value="W" id="2" /></li>
-        <li><input type="button" value="X" id="3" /></li>
-        <li><input type="button" value="Y" id="3" /></li>
-        <li><input type="button" value="Z" id="1" /></li>
-        <li><input type="button" value="Ç" id="2" /></li>
-        <li><input type="button" value="." id="3" /></li>
-        <li><input type="button" value="," id="3" /></li>
+        <li>
+          <input type="button" value="T" id="V" />
+        </li>
+        <li>
+          <input type="button" value="V" id="1" />
+        </li>
+        <li>
+          <input type="button" value="W" id="2" />
+        </li>
+        <li>
+          <input type="button" value="X" id="3" />
+        </li>
+        <li>
+          <input type="button" value="Y" id="3" />
+        </li>
+        <li>
+          <input type="button" value="Z" id="1" />
+        </li>
+        <li>
+          <input type="button" value="Ç" id="2" />
+        </li>
+        <li>
+          <input type="button" value="." id="3" />
+        </li>
+        <li>
+          <input type="button" value="," id="3" />
+        </li>
       </ul>
     </div>
-    </div>
+  </div>
 </div>
 
 <!-- <div id='loading'>
@@ -69,28 +142,28 @@
 </div> -->
 
 <div class="right">
-  <textarea type="text" value="" id="text" placeholder="Comece a sua mensagem..."/></textarea>
+  <textarea type="text" value="" id="text" placeholder="Comece a sua mensagem..." /></textarea>
 
   <div class="chat-scroll">
     <div class="chat-wrapper">
-    <div class="message">
-      <div class="user-picture"></div>
-      <div class="balloon">sAqui vai uma mensagem que o vitor escreveu para todos nós com muito amor e carinho.</div>
-    </div>
       <div class="message">
-      <div class="user-picture"></div>
-      <div class="balloon">Aqui vai uma mensagem que o vitor escreveu para todos nós com muito amor e carinho.</div>
-    </div>
+        <div class="user-picture"></div>
+        <div class="balloon">sAqui vai uma mensagem que o vitor escreveu para todos nós com muito amor e carinho.</div>
+      </div>
       <div class="message">
-      <div class="user-picture"></div>
-      <div class="balloon">Aqui vai uma mensagem que o vitor escreveu para todos nós com muito amor e carinho.</div>
-    </div>
+        <div class="user-picture"></div>
+        <div class="balloon">Aqui vai uma mensagem que o vitor escreveu para todos nós com muito amor e carinho.</div>
+      </div>
       <div class="message">
-      <div class="user-picture"></div>
-      <div class="balloon">Aqui vai uma mensagem que o vitor escreveu para todos nós com muito amor e carinho.</div>
+        <div class="user-picture"></div>
+        <div class="balloon">Aqui vai uma mensagem que o vitor escreveu para todos nós com muito amor e carinho.</div>
+      </div>
+      <div class="message">
+        <div class="user-picture"></div>
+        <div class="balloon">Aqui vai uma mensagem que o vitor escreveu para todos nós com muito amor e carinho.</div>
+      </div>
     </div>
-   </div>
-    
-    
+
+
   </div>
 </div>
