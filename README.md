@@ -10,9 +10,9 @@ Ao concluir uma conversa ou uma rotina, ele poderá clicar para esquerda e um mo
 > OBS: Cada troca de carácter o display preto deve acompanhar e trocar também a letra para facilitar a leitura do Vitor
 
 ### Controllers
-UP: Confirmar
-DOWN: Desfazer (Voltar última ação)
-RIGHT: Enter (Enviar mensagem)
+- UP: Confirmar
+- DOWN: Desfazer (Voltar última ação)
+- RIGHT: Enter (Enviar mensagem)
 
 ### Actions (Serve para o Desfazer)
 Selecionar Linha (Ø, 1, 2, 3)
