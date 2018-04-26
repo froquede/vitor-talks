@@ -1,0 +1,243 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
+input[type=button] {
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 800;
+  border: 1px solid #e6e6e6;
+  color: #c8c8c8;
+  background-color: #f0f0f0;
+  opacity: .5;
+}
+input[type=button]:focus {
+  outline: 0;
+}
+input[type=button].selected {
+  color: red;
+}
+
+.left {
+  display: flex;
+  flex: none;
+  width: 100%;
+  background-color: white;
+  padding: 40px;
+  border-bottom: 1px solid #e6e6e6;
+}
+.left .display {
+  width: 225px;
+  height: 225px;
+  background-color: black;
+  border: 5px solid #e6e6e6;
+  border-radius: 4px;
+  color: white;
+  display: flex;
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 140px;
+}
+.left .characters {
+  display: flex;
+  padding-left: 40px;
+}
+.left .characters ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+.left .characters ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 5px;
+}
+.left .characters ul li.active input {
+  opacity: 1;
+  color: black;
+  background-color: transparent;
+}
+.left .characters ul#row {
+  flex-direction: column;
+}
+
+.right {
+  width: 100%;
+  flex: auto;
+  background-color: #f0f0f0;
+  border-left: 1px solid #e6e6e6;
+  display: flex;
+}
+.right .chat-scroll {
+  height: auto;
+  padding: 0 20px 20px;
+  overflow: auto;
+}
+.right .chat-scroll .chat-wrapper {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.right .chat-scroll .message {
+  display: flex;
+  margin: 20px 0 0;
+  flex: none;
+}
+.right .chat-scroll .message .user-picture {
+  width: 36px;
+  height: 36px;
+  border-radius: 20px;
+  border: 1px solid #e6e6e6;
+  background: url("https://yt3.ggpht.com/-oUQy6tlU0tY/AAAAAAAAAAI/AAAAAAAAAAA/uZDLCT_CzO8/s100-c-k-no-mo-rj-c0xffffff/photo.jpg") no-repeat center;
+  background-size: cover;
+}
+.right .chat-scroll .message .balloon {
+  width: 60%;
+  height: auto;
+  color: white;
+  font-family: sans-serif;
+  padding: 12px;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: .01em;
+  margin-left: 10px;
+  border-radius: 15px;
+  background-color: black;
+}
+
+textarea {
+  border: 0;
+  border-right: 1px solid #e6e6e6;
+  background-color: transparent;
+  font-size: 20px;
+  width: 300px;
+  height: auto;
+  padding: 25px;
+  resize: none;
+}
+textarea:focus {
+  outline: 0;
+}
+
+#loading {
+  width: 50px;
+  height: 50px;
+  margin: 30px auto;
+  position: relative;
+}
+
+.outer-shadow, .inner-shadow {
+  z-index: 4;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.inner-shadow {
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin-left: -20px;
+  margin-top: -20px;
+  border-radius: 100%;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.hold {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip: rect(0px, 50px, 50px, 25px);
+  border-radius: 100%;
+  background-color: #fff;
+}
+
+.fill, .dot span {
+  background-color: #f50;
+}
+
+.fill {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  clip: rect(0px, 25px, 50px, 0px);
+}
+
+.left-div .fill {
+  z-index: 1;
+  -webkit-animation: left 1s linear;
+  -moz-animation: left 1s linear;
+  animation: left 1s linear both;
+}
+
+@keyframes left {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+@-webkit-keyframes left {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+  }
+}
+.right-div {
+  z-index: 3;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.right-div .fill {
+  z-index: 3;
+  -webkit-animation: right 1s linear;
+  -moz-animation: right 1s linear;
+  animation: right 1s linear both;
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+@keyframes right {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+@-webkit-keyframes right {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+.inner-shadow img {
+  margin-left: 8px;
+  margin-top: 7px;
+}
+
