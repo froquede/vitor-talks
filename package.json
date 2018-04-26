@@ -1,0 +1,26 @@
+{
+  "name": "vitor-talks",
+  "version": "0.0.1",
+  "description": "open source assistive joystick with keyboard interface",
+  "main": "index.js",
+  "scripts": {
+    "start": "./node_modules/http-server/bin/http-server -c-1 -p 8000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rfsdalotto/vitortalks.git"
+  },
+  "keywords": [
+    "assistive"
+  ],
+  "author": "",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/rfsdalotto/vitortalks/issues"
+  },
+  "homepage": "https://github.com/rfsdalotto/vitortalks#readme",
+  "dependencies": {
+    "http-server": "^0.11.1",
+    "jquery": "^3.3.1"
+  }
+}
