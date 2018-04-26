@@ -1,4 +1,4 @@
-# Requisitos VitorTalks
+# Requisitos MVP VitorTalks
 
 ### Typing
 Primeiramente o Vitor deve selecionar se é **Vogal (Ø), Linha 1, Linha 2 ou Linha 3**.
