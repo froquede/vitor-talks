@@ -9,15 +9,18 @@ Ao concluir uma conversa ou uma rotina, ele poderá clicar para esquerda e um mo
 
 > OBS: Cada troca de carácter o display preto deve acompanhar e trocar também a letra para facilitar a leitura do Vitor
 
+
 ### Controllers
 - UP: Confirmar
 - DOWN: Desfazer (Voltar última ação)
 - RIGHT: Enter (Enviar mensagem)
 
+
 ### Actions (Serve para o Desfazer)
-Selecionar Linha (Ø, 1, 2, 3)
-Selecionar Caracter
-Submeter Mensagem
+- Selecionar Linha (Ø, 1, 2, 3)
+- Selecionar Caracter
+- Submeter Mensagem
+
 
 ## Saving
 Armazenar as mensagens no LocalStorage e com botão para esquerda enviar toda a conversa para um e-mail.
