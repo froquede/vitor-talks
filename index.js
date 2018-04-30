@@ -2,52 +2,52 @@ $(function () {
   var timer = 500;
   var currentSelection = 0;
   var currentChar = 0;
-  var chars = [5,9,9,9];
-  
-  var updateRow = function(r) {
+  var chars = [5, 9, 9, 9];
+
+  var updateRow = function (r) {
     $('.characters #row li').removeClass('active');
-    $('#'+r).parent('li').addClass('active');
+    $('#' + r).parent('li').addClass('active');
   };
-  
-  var updateChar = function(r) {
+
+  var updateChar = function (r) {
     $('.second ul li').removeClass('active');
-    var line = $('.second ul:nth-child('+currentSelection+') li:nth-child('+r+')').addClass('active');
+    var line = $('.second ul:nth-child(' + currentSelection + ') li:nth-child(' + r + ')').addClass('active');
   };
-  
-  var updateViewChar = function(char){
+
+  var updateViewChar = function (char) {
     $('.js-display-char').text(char);
   };
 
-  var highlightSelection = function(){
+  var highlightSelection = function () {
     $('.js-display-char').addClass('highlight');
-    setTimeout(function(){
+    setTimeout(function () {
       $('.js-display-char').removeClass('highlight');
     }, timer / 2);
   }
-  
+
   var state = {
     timer: null,
-    nextLine: function() {
-      this.timer = setInterval(function() {
-        if(currentSelection > 3) currentSelection = 0;
+    nextLine: function () {
+      this.timer = setInterval(function () {
+        if (currentSelection > 3) currentSelection = 0;
         console.log('current row: ', currentSelection);
         updateViewChar(currentSelection);
         updateRow(currentSelection++);
       }, timer);
     },
-    nextColumn: function() {
+    nextColumn: function () {
       clearInterval(this.timer);
       currentChar = 1;
-      this.timer = setInterval(function() {
-        if (currentChar > chars[currentSelection -1]) currentChar = 1;
+      this.timer = setInterval(function () {
+        if (currentChar > chars[currentSelection - 1]) currentChar = 1;
         console.log('current row: ', currentSelection);
         console.log('current col: ', currentChar);
-        console.log('current char: ', $('.second ul:nth-child('+currentSelection+') li:nth-child('+currentChar+') input').val());
-        updateViewChar($('.second ul:nth-child('+currentSelection+') li:nth-child('+currentChar+') input').val());
+        console.log('current char: ', $('.second ul:nth-child(' + currentSelection + ') li:nth-child(' + currentChar + ') input').val());
+        updateViewChar($('.second ul:nth-child(' + currentSelection + ') li:nth-child(' + currentChar + ') input').val());
         updateChar(currentChar++);
       }, timer);
     },
-    next: function() {
+    next: function () {
       console.log(this.current);
       if (this.current == 'nextLine') {
         this.current = 'nextColumn';
@@ -56,22 +56,62 @@ $(function () {
         this.current = 'selectChar';
         var text = $('#text');
         currentChar--;
-        var selectedChar = $('.second ul:nth-child('+currentSelection+') li:nth-child('+currentChar+') input').val();
+        var selectedChar = $('.second ul:nth-child(' + currentSelection + ') li:nth-child(' + currentChar + ') input').val();
         text.val(text.val() + selectedChar);
         console.log(text.val());
         this.current = 'nextLine';
         clearInterval(this.timer);
         this.nextLine();
+        var actual_query = text.val();
+
+        $.getJSON("http://suggestqueries.google.com/complete/search?callback=?",
+          {
+            "hl": "pt", // Language
+            "jsonp": "suggestCallBack", // jsonp callback function name
+            "q": actual_query, // query term
+            "client": "youtube" // force youtube style response, i.e. jsonp
+          }
+        );
+
+        suggestCallBack = function (data) {
+          var suggestions = [];
+          data[1].length = 5;
+          $('.js-suggestion-list').html('');
+          var all_words = [];
+          $.each(data[1], function (key, val) {
+            var res = val[0];
+            all_words = all_words.concat(res.split(' '));
+          });
+
+          all_words = all_words.filter(function (item, pos) {
+            return all_words.indexOf(item) == pos;
+          });
+          all_words = all_words.filter(function (item, pos) {
+            return item.substring(0, actual_query.length).toUpperCase() === actual_query.toUpperCase();
+          });
+
+          all_words = all_words.concat(data[1].map(function(v){
+            return v[0];
+          }))
+
+          if(all_words.length > 10){
+            all_words.length = 10;
+          }
+
+          $('.js-suggestion-list').append(all_words.map(function(word){
+            return '<li><p>' + word + '</p></li>'
+          }));
+        };
       }
     },
     selectChar: 3,
-    current: 'nextLine' 
+    current: 'nextLine'
   };
-  
+
   state.nextLine();
-  
-  document.addEventListener('keydown', function(event) {
-    if(event.key == 'ArrowRight') {
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key == 'ArrowRight') {
       state.next();
       highlightSelection();
     }
