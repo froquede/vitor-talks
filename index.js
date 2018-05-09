@@ -64,7 +64,7 @@ $(function () {
         this.nextLine();
         var actual_query = text.val();
 
-        $.getJSON("http://suggestqueries.google.com/complete/search?callback=?",
+        $.getJSON("https://suggestqueries.google.com/complete/search?callback=?",
           {
             "hl": "pt", // Language
             "jsonp": "suggestCallBack", // jsonp callback function name
