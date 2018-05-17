@@ -15,23 +15,23 @@ void setup() {
 void loop(){
   left_trigger = digitalRead(left_switch);
   if(left_trigger == HIGH){
-     Serial.println('left');
+     Serial.println("left");
   }
 
   up_trigger = digitalRead(up_switch);
   if(up_trigger == HIGH){
-     Serial.println('up');
+     Serial.println("up");
   }
 
   right_trigger = digitalRead(right_switch);
   if(right_trigger == HIGH){
-     Serial.println('right');
+     Serial.println("right");
   }
 
   down_trigger = digitalRead(down_switch);
   if(down_trigger == HIGH){
-     Serial.println('down');
+     Serial.println("down");
   }
 
-  delay(500);
+  delay(2000);
 }
