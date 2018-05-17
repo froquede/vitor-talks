@@ -9,7 +9,7 @@ int down_switch = 8;
 
 void setup() {
   pinMode(left_switch, INPUT);     
-  Serial.begin(9600);
+  Serial.begin(38400);
 }
 
 void loop(){
@@ -32,4 +32,6 @@ void loop(){
   if(down_trigger == HIGH){
      Serial.println('down');
   }
+
+  delay(500);
 }
