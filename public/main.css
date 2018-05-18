@@ -247,18 +247,6 @@ textarea:focus {
   transition: 0.2s ease all;
 }
 
-.suggestions {
-  display: inline-block;
-  list-style-type: none;
-  margin: 0;
-}
-
-.suggestions li{
-  display: inline-block;
-  text-decoration: none;
-  margin: 0;
-}
-
-.suggestions p{
-  padding: 10px;
+.suggestions input[type=button]{
+  width: auto;
 }

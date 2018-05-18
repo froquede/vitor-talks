@@ -2,7 +2,7 @@
 <script>
     function findDevices() {
         navigator.bluetooth.requestDevice()
-            .then(device => { console.log(device); })
-            .catch(error => { console.log(error); });
+            .then(device => { alert(device); })
+            .catch(error => { alert(error); });
     }
 </script>

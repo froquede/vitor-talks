@@ -1,6 +1,8 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="/socket.io.js"></script>
 <script src="index.js"></script>
 <link rel="stylesheet" type="text/css" href="main.css"></link>
+<div class="timer"></div>
 <div class="left">
   <div class="display js-display-char">A</div>
   <div class="characters">
@@ -16,6 +18,9 @@
       </li>
       <li class="active">
         <input type="button" value="3" id="3" />
+      </li>
+      <li class="active">
+        <input type="button" value="S" id="4" />
       </li>
     </ul>
     <div class="second">
@@ -123,6 +128,9 @@
           <input type="button" value="," id="3" />
         </li>
       </ul>
+      <ul class="js-suggestion-list line-four suggestions">
+
+      </ul>
     </div>
   </div>
 </div>
@@ -140,12 +148,6 @@
   </div>
 
 </div> -->
-
-<div class="word-suggestion">
-  <ul class="suggestions js-suggestion-list">
-
-  </ul>
-</div>
 
 <div class="right">
   <textarea type="text" value="" id="text" placeholder="Comece a sua mensagem..." /></textarea>
