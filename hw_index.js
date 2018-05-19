@@ -8,10 +8,10 @@ var app = express();
 var http = require("http").Server(app);
 
 board.on("ready", function() {
-  left_switch = new five.Button(7);
-  up_switch = new five.Button(8);
-  right_switch = new five.Button(12);
-  down_switch = new five.Button(13);
+  left_switch = new five.Button({pin: 7, inverted: true});
+  up_switch = new five.Button({pin: 8, inverted: true});
+  right_switch = new five.Button({pin: 12, inverted: true});
+  down_switch = new five.Button({pin: 13, inverted: true});
 
   bindEvents(left_switch, "left");
   bindEvents(up_switch, "up");
@@ -19,7 +19,7 @@ board.on("ready", function() {
   bindEvents(down_switch, "down");
 
   potentiometer = new five.Sensor({
-    pin: "A3",
+    pin: "A0",
     freq: 1000
   });
 
@@ -28,7 +28,7 @@ board.on("ready", function() {
   });
 
   potentiometer.on("data", function() {
-	io.emit("potentiometer", { value: this.value });
+	  io.emit("potentiometer", { value: this.value });
   });
 });
 
