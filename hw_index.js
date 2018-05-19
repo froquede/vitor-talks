@@ -20,7 +20,7 @@ board.on("ready", function() {
 
   potentiometer = new five.Sensor({
     pin: "A0",
-    freq: 1000
+    freq: 700
   });
 
   board.repl.inject({
@@ -28,6 +28,7 @@ board.on("ready", function() {
   });
 
   potentiometer.on("data", function() {
+    console.log(this.value);
     io.emit("potentiometer", { value: this.value });
   });
 });
@@ -38,9 +39,11 @@ function bindEvents(sw, key) {
       console.log("hit " + key);
     })
     .on("hold", function() {
+      console.log(key);
       console.log("hold " + key);
     })
     .on("release", function() {
+      console.log(key);
       io.emit("release", { key: key });
     });
 }
