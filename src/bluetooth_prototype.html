@@ -1,0 +1,8 @@
+<button onclick="findDevices()">FIND DEVICES</button>
+<script>
+    function findDevices() {
+        navigator.bluetooth.requestDevice()
+            .then(device => { alert(device); })
+            .catch(error => { alert(error); });
+    }
+</script>

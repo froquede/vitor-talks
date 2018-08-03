@@ -1,0 +1,16 @@
+---------------------------------------------------------------------------
+NCDrill File Report For: PCB-vitor-project.PcbDoc   31/07/2018  22:28:21
+---------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : PCB-vitor-project.TXT
+
+Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
+---------------------------------------------------------------------------
+T1        0.711mm (27.992mil)      Round          1                0.00 mm (0.00 Inch)
+T2        0.762mm (30mil)          Round          6                56.51 mm (2.22 Inch)
+T3        1.016mm (40mil)          Round          113              551.77 mm (21.72 Inch)
+---------------------------------------------------------------------------
+Totals                                            120              608.28 mm (23.95 Inch)
+
+Total Processing Time (hh:mm:ss) : 00:00:00
