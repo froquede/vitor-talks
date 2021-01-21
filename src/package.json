@@ -24,6 +24,6 @@
     "http-server": "^0.11.1",
     "johnny-five": "^0.15.0",
     "jquery": "^3.4.0",
-    "socket.io": "^2.1.1"
+    "socket.io": "^2.4.0"
   }
 }
