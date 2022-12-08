@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/rfsdalotto/vitortalks#readme",
   "dependencies": {
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "http-server": "^0.11.1",
     "johnny-five": "^0.15.0",
     "jquery": "^3.4.0",
